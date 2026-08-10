@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered user accounts (Students & Admins)",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "phone": { "type": "string" },
+        "bio": { "type": "string" },
+        "enrolledMonthKeys": { "type": "array", "items": { "type": "string" } },
+        "enrolledCourseIds": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email", "role"]
+    },
+    "Course": {
+      "title": "Course",
+      "description": "Available courses in Academialk",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subject": { "type": "string" },
+        "instructor": { "type": "string" },
+        "monthlyFee": { "type": "number" }
+      },
+      "required": ["title", "monthlyFee"]
+    },
+    "Payment": {
+      "title": "Payment",
+      "description": "Payment receipts submitted by students",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "courseTitle": { "type": "string" },
+        "monthKey": { "type": "string" },
+        "amount": { "type": "number" },
+        "receiptUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["studentId", "amount", "status"]
+    }
+  }
+}

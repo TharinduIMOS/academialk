@@ -1,0 +1,6 @@
+{
+  "name": "Academialk",
+  "description": "Academialk - A modern LMS platform for students to enroll, watch video recordings, and attend Zoom classes, with an integrated admin portal for course management and payment approvals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

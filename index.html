@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academialk - Live Classes & Recordings</title>
+    <script>
+      (function() {
+        try {
+          var target = window;
+          var proto = Object.getPrototypeOf(window);
+          var desc = Object.getOwnPropertyDescriptor(target, 'fetch') || (proto && Object.getOwnPropertyDescriptor(proto, 'fetch'));
+          var activeFetch = window.fetch ? window.fetch.bind(window) : null;
+          
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return activeFetch;
+            },
+            set: function(fn) {
+              activeFetch = fn;
+            }
+          });
+        } catch (e) {
+          console.warn('Fetch setter patch initialized');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
